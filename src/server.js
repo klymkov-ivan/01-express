@@ -8,10 +8,6 @@ const PORT = process.env.PORT;
 
 app.use(express.json());
 
-app.listen(PORT, () => {
-  console.log('Server is running');
-});
-
 app.use(cors());
 app.use(
   pino({
@@ -60,4 +56,8 @@ app.use((err, req, res, next) => {
     message: err.message,
     error: err.message,
   });
+});
+
+app.listen(PORT, () => {
+  console.log('Server is running');
 });
