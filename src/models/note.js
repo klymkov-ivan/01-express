@@ -9,8 +9,9 @@ const noteSchema = new Schema(
       trim: true,
     },
     content: {
-      type: Number,
-      required: true,
+      type: String,
+      required: false,
+      trim: true,
     },
     tag: {
       type: String,
@@ -27,6 +28,7 @@ const noteSchema = new Schema(
         'Important',
         'Todo',
       ],
+      default: 'Todo',
     },
   },
   {
