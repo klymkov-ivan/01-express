@@ -7,7 +7,7 @@ import {
   updateNote,
 } from '../controllers/notesController.js';
 
-export const router = Router();
+const router = Router();
 
 router.get('/notes', getAllNotes);
 
