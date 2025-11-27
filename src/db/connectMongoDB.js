@@ -5,6 +5,11 @@ import { Note } from '../models/note.js';
 export const connectMongoDB = async () => {
   try {
     const mongoURL = process.env.MONGO_URL;
+
+    if (!mongoURL) {
+      throw new Error('Environment variable MONGO_URL is missing');
+    }
+
     await mongoose.connect(mongoURL);
     console.log('✅ MongoDB connection established successfully');
     await Note.syncIndexes();
